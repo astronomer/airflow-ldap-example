@@ -4,11 +4,15 @@ Example project for configuring Airflow with LDAP. Includes prepopulated OpenLDA
 
 ## Usage
 
+### Initial Setup
+
 When running the project for the first time, you need to initiate the Airflow database.
 
 ```bash
 docker-compose up airflow-init
 ```
+
+### Running the Project
 
 To run project: 
 
@@ -28,9 +32,17 @@ To remove containers and volumes:
 docker-compose down --volumes --rmi all
 ```
 
+### Configuration Changes
+
 LDAP configs can be adjusted in [webserver_config.py](webserver_config.py)
 
-To login, enter username and password for the characters below.
+You can override environment variables in the docker-compose file by adding them to an `.env` file in the project root.
+
+### Accessing Airflow
+
+To login, enter username and password for one of the characters below. 
+
+For example, if you want to login as "Fry", username is `fry` and password is `fry`
 
 ## LDAP structure
 

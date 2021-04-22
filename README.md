@@ -38,6 +38,8 @@ LDAP configs can be adjusted in [webserver_config.py](webserver_config.py)
 
 You can override environment variables in the docker-compose file by adding them to an `.env` file in the project root.
 
+Change the Airflow image version by modifying the `build_arg` in the docker-compose file.
+
 ### Accessing Airflow
 
 To login, enter username and password for one of the characters below. 

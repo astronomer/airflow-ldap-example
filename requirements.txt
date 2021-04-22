@@ -1,0 +1,2 @@
+python-ldap
+flask-appbuilder==3.2.2

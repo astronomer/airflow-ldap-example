@@ -55,16 +55,26 @@ AUTH_LDAP_SERVER = "ldap://ldap-server:10389"
 
 # registration configs
 AUTH_USER_REGISTRATION = True
-AUTH_USER_REGISTRATION_ROLE = "Admin"
 AUTH_LDAP_FIRSTNAME_FIELD = "givenName"
 AUTH_LDAP_LASTNAME_FIELD = "sn"
 AUTH_LDAP_EMAIL_FIELD = "mail"
+# Required if not mapping from LDAP DN
+# AUTH_USER_REGISTRATION_ROLE = "Viewer"
 
 # search configs
 AUTH_LDAP_SEARCH = "ou=people,dc=planetexpress,dc=com"
 AUTH_LDAP_UID_FIELD = "uid"
 AUTH_LDAP_BIND_USER = "cn=admin,dc=planetexpress,dc=com"
 AUTH_LDAP_BIND_PASSWORD = "GoodNewsEveryone"
+
+# mapping from LDAP DN to airflow roles
+AUTH_ROLES_MAPPING = {
+    "cn=admin_staff,ou=people,dc=planetexpress,dc=com": ["Admin"],
+    "cn=ship_crew,ou=people,dc=planetexpress,dc=com": ["Viewer"],
+}
+AUTH_LDAP_GROUP_FIELD = "memberOf"
+AUTH_ROLES_SYNC_AT_LOGIN = True
+PERMANENT_SESSION_LIFETIME = 1800
 
 # LDAPS
 AUTH_LDAP_USE_TLS = False

@@ -1,6 +1,23 @@
 # Airflow LDAP Example
 
-Example project for configuring Airflow with LDAP. Includes prepopulated OpenLDAP server
+Example project for configuring Airflow with LDAP. Includes prepopulated OpenLDAP server.
+Users are based off of characters in Futurama. LDAP attributes are documented below.
+
+Airflow is configured to map Futurama `ship_crew` members to the Airflow Viewer role, and `admin_staff` to the Airflow Admin role.
+
+**Quick Sample User Reference:**
+
+Admin user:
+```
+username: hermes
+password: hermes
+```
+
+Viewer user:
+```
+username: fry
+password: fry
+```
 
 ## Usage
 
